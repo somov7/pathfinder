@@ -13,8 +13,7 @@ const EulerPathFinder = () => {
                 label="Количество вершин"
                 variant="filled"
                 onChange = {(e) => setCounter(+e.target.value)}
-            >
-            </TextField>
+            />
             <Button
                 onClick={(e) => {
                     let p = getEulerianCycle(counter, 50)

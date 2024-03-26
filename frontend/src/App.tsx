@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import EulerPathFinder from "./EulerPathFinder";
+import Map from "./map/Map";
+import SideBar, {LocationPoint} from './sidebar/SideBar';
 
 function App() {
+  const [locations, setLocations] = useState<LocationPoint[]>([])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <EulerPathFinder/>
-      </header>
+      <SideBar locations={locations} setLocations={setLocations}/>
+      <Map locations={locations}/>
     </div>
   );
 }

@@ -4,27 +4,30 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
+import java.util.UUID;
+
 @Data
 @AllArgsConstructor
 public class Node {
     @ToString.Exclude
     private Node parent;
-    private String from;
-    private String to;
+    private Edge[] include;
+    private Edge[] exclude;
     private boolean take;
-    private double minWeight;
+    private long minWeight;
     private Matrix matrix;
-    @ToString.Exclude
+    private int left;
     private Node yes;
-    @ToString.Exclude
     private Node no;
+    private int order;
 
-    public Node(Node parent, String from, String to, boolean take, double minWeight, Matrix matrix) {
+    public Node(Node parent, Edge[] include, Edge[] exclude, boolean take, long minWeight, Matrix matrix, int left) {
         this.parent = parent;
-        this.from = from;
-        this.to = to;
+        this.include = include;
+        this.exclude = exclude;
         this.take = take;
         this.minWeight = minWeight;
         this.matrix = matrix;
+        this.left = left;
     }
 }

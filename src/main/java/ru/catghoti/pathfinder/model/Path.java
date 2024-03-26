@@ -3,12 +3,13 @@ package ru.catghoti.pathfinder.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
 @AllArgsConstructor
-public class PairWithPenalty {
-    private UUID row;
-    private UUID column;
-    private long penalty;
+public class Path {
+    private List<UUID> path;
+    private long totalDistance;
+    private long totalTime;
 }
